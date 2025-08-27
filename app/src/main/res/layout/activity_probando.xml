@@ -2,67 +2,114 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash"
-    tools:context=".MainActivity">
+    android:background="@color/black"
+    tools:context=".ProbandoActivity">
 
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:orientation="vertical"
-        android:background="@color/black"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <!-- CONTENEDOR HORIZONTAL PARA 2 SEMÁFOROS -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="30dp">
 
-        <ImageView
-            android:id="@+id/myImage2"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/circulitonegro"
-            android:layout_marginBottom="20dp"/>
+            <!-- SEMÁFORO 1 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@color/white"
+                android:padding="15dp"
+                android:layout_marginEnd="40dp">
 
+                <ImageView
+                    android:id="@+id/myImageRojo1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/circulitonegro"
+                    android:layout_margin="3dp"/>
+
+                <ImageView
+                    android:id="@+id/myImageAmarillo1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/circulitonegro"
+                    android:layout_margin="3dp"/>
+
+                <ImageView
+                    android:id="@+id/myImageVerde1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/circulitonegro"
+                    android:layout_margin="3dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@color/white"
+                android:padding="15dp">
+
+                <ImageView
+                    android:id="@+id/myImageRojo2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/circulitonegro"
+                    android:layout_margin="3dp"/>
+
+                <ImageView
+                    android:id="@+id/myImageAmarillo2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/circulitonegro"
+                    android:layout_margin="3dp"/>
+
+                <ImageView
+                    android:id="@+id/myImageVerde2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/circulitonegro"
+                    android:layout_margin="3dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnHilo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
             android:background="@drawable/btn_cambiar"
-            android:text="Ingresar"
-            android:textColor="@android:color/white" />
-
-        <LinearLayout
-            android:id="@+id/containerH"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <ImageView
-                android:id="@+id/myImage"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:src="@drawable/circulitonegro"/>
-
-        </LinearLayout>
+            android:text="Iniciar Semáforos"
+            android:textColor="@android:color/white"/>
 
 
         <TextView
             android:id="@+id/tvTextoEjemplo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contador"
+            android:layout_marginTop="20dp"
+            android:text="Semáforos listos"
             android:textColor="@android:color/white"
-            android:textSize="18sp"/>
+            android:textSize="16sp"/>
 
     </LinearLayout>
 
