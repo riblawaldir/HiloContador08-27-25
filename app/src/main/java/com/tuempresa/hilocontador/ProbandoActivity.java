@@ -17,6 +17,7 @@ public class ProbandoActivity extends AppCompatActivity {
     ImageView myImageVerde;
     ImageView myImageRojo;
     private boolean encendido = false;
+    private int colorActual = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +25,10 @@ public class ProbandoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_probando);
         btnHilo = findViewById(R.id.btnHilo);
         tvTextoEjemplo = findViewById(R.id.tvTextoEjemplo);
+        myImage = findViewById(R.id.myImage);
 
-        myImageAmarillo = findViewById(R.id.myImageAmarillo);
-        myImageVerde = findViewById(R.id.myImageVerde);
-        myImageRojo = findViewById(R.id.myImageRojo);
+
+
 
 
         btnHilo.setOnClickListener(new View.OnClickListener() {
@@ -44,18 +45,18 @@ public class ProbandoActivity extends AppCompatActivity {
                                 public void run() {
                                     tvTextoEjemplo.setText(String.valueOf("Contador: " + dec));
 
-                                    if (encendido) {
-                                        myImageAmarillo.setImageResource(R.drawable.foco_negro);
-                                        myImageVerde.setImageResource(R.drawable.foco_negro);
-                                        myImageRojo.setImageResource(R.drawable.foco_negro);
-                                    } else if (!encendido) {
-
-                                        myImageAmarillo.setImageResource(R.drawable.foco_rojo);
-                                        myImageVerde.setImageResource(R.drawable.foco_amarillo);
-                                        myImageRojo.setImageResource(R.drawable.foco_verde);
+                                    switch (colorActual) {
+                                        case 0:
+                                            myImage.setImageResource(R.drawable.foco_rojo);
+                                            break;
+                                        case 1:
+                                            myImage.setImageResource(R.drawable.foco_amarillo);
+                                            break;
+                                        case 2:
+                                            myImage.setImageResource(R.drawable.foco_verde);
+                                            break;
                                     }
-
-                                    encendido = !encendido;
+                                    colorActual = (colorActual + 1) % 3;
                                 }
                             });
                             try {

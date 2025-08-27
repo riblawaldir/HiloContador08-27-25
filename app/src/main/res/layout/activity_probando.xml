@@ -31,20 +31,11 @@
             app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/myImageRojo"
+            android:id="@+id/myImage"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:background="@drawable/circulitonegro"/>
-        <ImageView
-            android:id="@+id/myImageAmarillo"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:background="@drawable/circulitonegro"/>
-        <ImageView
-            android:id="@+id/myImageVerde"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:background="@drawable/circulitonegro"/>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnHilo"
                 android:layout_width="wrap_content"
