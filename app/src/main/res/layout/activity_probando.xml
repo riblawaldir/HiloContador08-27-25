@@ -18,11 +18,43 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:id="@+id/container2"
+            android:layout_width="397dp"
+            android:layout_height="712dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
-            android:id="@+id/myImage"
+            android:id="@+id/myImageRojo"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:background="@drawable/circulitonegro"/>
+        <ImageView
+            android:id="@+id/myImageAmarillo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/circulitonegro"/>
+        <ImageView
+            android:id="@+id/myImageVerde"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/circulitonegro"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnHilo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/btn_cambiar"
+                android:text="Ingresar"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tvTextoEjemplo"
@@ -34,14 +66,6 @@
             android:textSize="18sp" />
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnHilo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/btn_cambiar"
-            android:text="Ingresar"
-            android:textColor="@android:color/white" />
 
     </LinearLayout>
 

@@ -13,6 +13,9 @@ public class ProbandoActivity extends AppCompatActivity {
     Button btnHilo;
     TextView tvTextoEjemplo;
     ImageView myImage;
+    ImageView myImageAmarillo;
+    ImageView myImageVerde;
+    ImageView myImageRojo;
     private boolean encendido = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +24,11 @@ public class ProbandoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_probando);
         btnHilo = findViewById(R.id.btnHilo);
         tvTextoEjemplo = findViewById(R.id.tvTextoEjemplo);
-        myImage = findViewById(R.id.myImage);
+
+        myImageAmarillo = findViewById(R.id.myImageAmarillo);
+        myImageVerde = findViewById(R.id.myImageVerde);
+        myImageRojo = findViewById(R.id.myImageRojo);
+
 
         btnHilo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,10 +45,16 @@ public class ProbandoActivity extends AppCompatActivity {
                                     tvTextoEjemplo.setText(String.valueOf("Contador: " + dec));
 
                                     if (encendido) {
-                                        myImage.setImageResource(R.drawable.circulitonegro);
-                                    } else {
-                                        myImage.setImageResource(R.drawable.foco_rojo);
+                                        myImageAmarillo.setImageResource(R.drawable.foco_negro);
+                                        myImageVerde.setImageResource(R.drawable.foco_negro);
+                                        myImageRojo.setImageResource(R.drawable.foco_negro);
+                                    } else if (!encendido) {
+
+                                        myImageAmarillo.setImageResource(R.drawable.foco_rojo);
+                                        myImageVerde.setImageResource(R.drawable.foco_amarillo);
+                                        myImageRojo.setImageResource(R.drawable.foco_verde);
                                     }
+
                                     encendido = !encendido;
                                 }
                             });
