@@ -13,11 +13,14 @@ public class ProbandoActivity extends AppCompatActivity {
     Button btnHilo;
     TextView tvTextoEjemplo;
     ImageView myImage;
+    ImageView myImage2;
     ImageView myImageAmarillo;
     ImageView myImageVerde;
     ImageView myImageRojo;
     private boolean encendido = false;
     private int colorActual = 0;
+    private int colorActual2 = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +29,7 @@ public class ProbandoActivity extends AppCompatActivity {
         btnHilo = findViewById(R.id.btnHilo);
         tvTextoEjemplo = findViewById(R.id.tvTextoEjemplo);
         myImage = findViewById(R.id.myImage);
-
-
-
+        myImage2 = findViewById(R.id.myImage2);
 
 
         btnHilo.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +76,50 @@ public class ProbandoActivity extends AppCompatActivity {
                     }
                 });
                 hilo.start();
+
+                Thread hilo2 = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        for (int i = 0; i < 10; i++) {
+                            final int decc = i;
+
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    tvTextoEjemplo.setText(String.valueOf("Contador: " + decc));
+
+                                    switch (colorActual2) {
+                                        case 0:
+                                            myImage2.setImageResource(R.drawable.foco_verde);
+                                            break;
+                                        case 1:
+                                            myImage2.setImageResource(R.drawable.foco_amarillo);
+                                            break;
+                                        case 2:
+                                            myImage2.setImageResource(R.drawable.foco_rojo);
+                                            break;
+                                    }
+                                    colorActual2 = (colorActual2 + 1) % 3;
+                                }
+                            });
+                            try {
+                                Thread.sleep(5000);
+
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+
+                            }
+                        });
+                    }
+                });
+                hilo2.start();
             }
+
         });
     }
 }

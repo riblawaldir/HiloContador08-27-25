@@ -10,53 +10,59 @@
 
     <LinearLayout
         android:id="@+id/container"
-        android:layout_width="397dp"
-        android:layout_height="712dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
+        android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <LinearLayout
-            android:id="@+id/container2"
-            android:layout_width="397dp"
-            android:layout_height="712dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:background="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+
 
         <ImageView
-            android:id="@+id/myImage"
+            android:id="@+id/myImage2"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:background="@drawable/circulitonegro"/>
+            android:src="@drawable/circulitonegro"
+            android:layout_marginBottom="20dp"/>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnHilo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:background="@drawable/btn_cambiar"
-                android:text="Ingresar"
-                android:textColor="@android:color/white" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_cambiar"
+            android:text="Ingresar"
+            android:textColor="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/containerH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:id="@+id/myImage"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/circulitonegro"/>
 
         </LinearLayout>
+
 
         <TextView
             android:id="@+id/tvTextoEjemplo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="Contador"
             android:textColor="@android:color/white"
-            android:textSize="18sp" />
-
-
+            android:textSize="18sp"/>
 
     </LinearLayout>
 
